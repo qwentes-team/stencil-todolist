@@ -37,3 +37,8 @@ qw-example {
   display: block;
 }
 ```
+
+## Project goal
+
+Build the following todo-list with stencil: 
+https://sii.im/playground/notes/
