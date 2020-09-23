@@ -1,0 +1,23 @@
+qw-note-card-deletebutton{
+  margin-top: auto;
+  z-index: 2;
+}
+
+button {
+  width: 100%;
+  padding:20px;
+  border: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #5f5f5f;
+  transition: 300ms ease;
+}
+
+button:hover {
+  color: #fff;
+  background-color: tomato;
+}
+button:focus {
+  outline: 0;
+}

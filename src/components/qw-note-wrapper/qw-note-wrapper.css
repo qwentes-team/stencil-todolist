@@ -1,0 +1,14 @@
+qw-note-wrapper{
+  background: linear-gradient(to left, #B24592 , #F15F79);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Helvetica Neue" , sans-serif;
+  color: #5f5f5f;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,7 @@
+qw-note-card-list {
+  height: 100%;
+  overflow-y: scroll;
+}
+qw-note-card-list div{
+  height: fit-content;
+}
