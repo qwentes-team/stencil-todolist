@@ -1,4 +1,4 @@
-import { Component, h, Listen, State } from '@stencil/core';
+import { Component, Host, h, Listen, State } from '@stencil/core';
 
 @Component({
   tag: 'qw-note-card',
@@ -7,13 +7,11 @@ import { Component, h, Listen, State } from '@stencil/core';
 })
 export class QwNoteCard {
   @State() notelist : Array<string>;
-  @State() isEmpty : boolean;
 
   @Listen('addNote')
   addNoteHandler(event: CustomEvent<string>){
-    if(this.isEmpty){
+    if(this.notelist.length==0){
       this.notelist=[event.detail];
-      this.isEmpty=false;
     }
     else{
       this.notelist=[...this.notelist,event.detail];
@@ -23,26 +21,23 @@ export class QwNoteCard {
   @Listen('deleteNotes')
   deleteNotesHandler(){
     this.notelist=[];
-    this.isEmpty=true;
   }
   
   componentWillLoad(){
-    if(!this.notelist){
-      this.isEmpty=true
-    }
+    this.notelist=[]
   }
 
   render() {
     return (
-      <div>
-        <qw-note-card-heading titleCard="Notes"></qw-note-card-heading>
-        <qw-note-card-insert placeholder="Insert Text here..."></qw-note-card-insert>
-        <qw-note-card-list notelist={this.notelist} isEmpty={this.isEmpty}></qw-note-card-list>
-        { !this.isEmpty
-          ? <qw-note-card-deletebutton buttonTitle="clear list"></qw-note-card-deletebutton>
-          : <div></div>
-        }
-      </div>
+      <Host>
+        <qw-note-card-heading titleCard="Notes"/>
+        <qw-note-card-insert placeholder="Insert Text here..."/>
+        <div class="notelist">
+          { this.notelist.map((note) => 
+            <qw-note-noteitem note={note}/>)}
+        </div>
+        { !(this.notelist.length==0) && <qw-note-card-deletebutton buttonTitle="clear list"/> }
+      </Host>
     );
   }
 

@@ -12,7 +12,6 @@ export class QwNoteCardDeletebutton {
 
   @Listen('click')
   handleClick() {
-    console.log("click");
     this.deleteNotes.emit();
   }
 

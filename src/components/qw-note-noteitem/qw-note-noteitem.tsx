@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'qw-note-noteitem',
@@ -6,13 +6,13 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: false,
 })
 export class QwNoteNoteitem {
-  @Prop() nota : string;
+  @Prop() note : string;
 
   render() {
     return (
-      <div>
-        {this.nota}
-      </div>
+      <Host>
+        {this.note}
+      </Host>
     );
   }
 

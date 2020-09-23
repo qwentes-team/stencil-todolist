@@ -26,7 +26,7 @@ export class QwNoteCardInsert {
 
   render() {
     return (
-      <input placeholder={this.placeholder}></input>
+      <input placeholder={this.placeholder}/>
     );
   }
 

@@ -9,7 +9,7 @@ export class QwNoteWrapper {
 
   render() {
     return (
-      <qw-note-card></qw-note-card>
+      <qw-note-card/>
     );
   }
 
