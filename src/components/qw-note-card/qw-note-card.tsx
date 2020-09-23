@@ -10,12 +10,7 @@ export class QwNoteCard {
 
   @Listen('addNote')
   addNoteHandler(event: CustomEvent<string>){
-    if(this.notelist.length==0){
-      this.notelist=[event.detail];
-    }
-    else{
-      this.notelist=[...this.notelist,event.detail];
-    }
+    this.notelist=[...this.notelist,event.detail];
   }
 
   @Listen('deleteNotes')
@@ -32,11 +27,8 @@ export class QwNoteCard {
       <Host>
         <qw-note-card-heading titleCard="Notes"/>
         <qw-note-card-insert placeholder="Insert Text here..."/>
-        <div class="notelist">
-          { this.notelist.map((note) => 
-            <qw-note-noteitem note={note}/>)}
-        </div>
-        { !(this.notelist.length==0) && <qw-note-card-deletebutton buttonTitle="clear list"/> }
+        <qw-note-card-list notelist={this.notelist} isEmpty={this.notelist.length==0}/>
+        { this.notelist.length && <qw-note-card-deletebutton buttonTitle="clear list"/> }
       </Host>
     );
   }
