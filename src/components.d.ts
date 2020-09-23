@@ -6,34 +6,124 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface QwExample {
-        "message": string;
+    interface QwNoteCard {
+    }
+    interface QwNoteCardDeletebutton {
+        "buttonTitle": string;
+    }
+    interface QwNoteCardHeading {
+        "titleCard": string;
+    }
+    interface QwNoteCardInsert {
+        "placeholder": string;
+    }
+    interface QwNoteCardList {
+        "isEmpty": boolean;
+        "notelist": Array<string>;
+    }
+    interface QwNoteNoteitem {
+        "nota": string;
+    }
+    interface QwNoteWrapper {
     }
 }
 declare global {
-    interface HTMLQwExampleElement extends Components.QwExample, HTMLStencilElement {
+    interface HTMLQwNoteCardElement extends Components.QwNoteCard, HTMLStencilElement {
     }
-    var HTMLQwExampleElement: {
-        prototype: HTMLQwExampleElement;
-        new (): HTMLQwExampleElement;
+    var HTMLQwNoteCardElement: {
+        prototype: HTMLQwNoteCardElement;
+        new (): HTMLQwNoteCardElement;
+    };
+    interface HTMLQwNoteCardDeletebuttonElement extends Components.QwNoteCardDeletebutton, HTMLStencilElement {
+    }
+    var HTMLQwNoteCardDeletebuttonElement: {
+        prototype: HTMLQwNoteCardDeletebuttonElement;
+        new (): HTMLQwNoteCardDeletebuttonElement;
+    };
+    interface HTMLQwNoteCardHeadingElement extends Components.QwNoteCardHeading, HTMLStencilElement {
+    }
+    var HTMLQwNoteCardHeadingElement: {
+        prototype: HTMLQwNoteCardHeadingElement;
+        new (): HTMLQwNoteCardHeadingElement;
+    };
+    interface HTMLQwNoteCardInsertElement extends Components.QwNoteCardInsert, HTMLStencilElement {
+    }
+    var HTMLQwNoteCardInsertElement: {
+        prototype: HTMLQwNoteCardInsertElement;
+        new (): HTMLQwNoteCardInsertElement;
+    };
+    interface HTMLQwNoteCardListElement extends Components.QwNoteCardList, HTMLStencilElement {
+    }
+    var HTMLQwNoteCardListElement: {
+        prototype: HTMLQwNoteCardListElement;
+        new (): HTMLQwNoteCardListElement;
+    };
+    interface HTMLQwNoteNoteitemElement extends Components.QwNoteNoteitem, HTMLStencilElement {
+    }
+    var HTMLQwNoteNoteitemElement: {
+        prototype: HTMLQwNoteNoteitemElement;
+        new (): HTMLQwNoteNoteitemElement;
+    };
+    interface HTMLQwNoteWrapperElement extends Components.QwNoteWrapper, HTMLStencilElement {
+    }
+    var HTMLQwNoteWrapperElement: {
+        prototype: HTMLQwNoteWrapperElement;
+        new (): HTMLQwNoteWrapperElement;
     };
     interface HTMLElementTagNameMap {
-        "qw-example": HTMLQwExampleElement;
+        "qw-note-card": HTMLQwNoteCardElement;
+        "qw-note-card-deletebutton": HTMLQwNoteCardDeletebuttonElement;
+        "qw-note-card-heading": HTMLQwNoteCardHeadingElement;
+        "qw-note-card-insert": HTMLQwNoteCardInsertElement;
+        "qw-note-card-list": HTMLQwNoteCardListElement;
+        "qw-note-noteitem": HTMLQwNoteNoteitemElement;
+        "qw-note-wrapper": HTMLQwNoteWrapperElement;
     }
 }
 declare namespace LocalJSX {
-    interface QwExample {
-        "message"?: string;
+    interface QwNoteCard {
+    }
+    interface QwNoteCardDeletebutton {
+        "buttonTitle"?: string;
+        "onDeleteNotes"?: (event: CustomEvent<any>) => void;
+    }
+    interface QwNoteCardHeading {
+        "titleCard"?: string;
+    }
+    interface QwNoteCardInsert {
+        "onAddNote"?: (event: CustomEvent<string>) => void;
+        "placeholder"?: string;
+    }
+    interface QwNoteCardList {
+        "isEmpty"?: boolean;
+        "notelist"?: Array<string>;
+    }
+    interface QwNoteNoteitem {
+        "nota"?: string;
+    }
+    interface QwNoteWrapper {
     }
     interface IntrinsicElements {
-        "qw-example": QwExample;
+        "qw-note-card": QwNoteCard;
+        "qw-note-card-deletebutton": QwNoteCardDeletebutton;
+        "qw-note-card-heading": QwNoteCardHeading;
+        "qw-note-card-insert": QwNoteCardInsert;
+        "qw-note-card-list": QwNoteCardList;
+        "qw-note-noteitem": QwNoteNoteitem;
+        "qw-note-wrapper": QwNoteWrapper;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "qw-example": LocalJSX.QwExample & JSXBase.HTMLAttributes<HTMLQwExampleElement>;
+            "qw-note-card": LocalJSX.QwNoteCard & JSXBase.HTMLAttributes<HTMLQwNoteCardElement>;
+            "qw-note-card-deletebutton": LocalJSX.QwNoteCardDeletebutton & JSXBase.HTMLAttributes<HTMLQwNoteCardDeletebuttonElement>;
+            "qw-note-card-heading": LocalJSX.QwNoteCardHeading & JSXBase.HTMLAttributes<HTMLQwNoteCardHeadingElement>;
+            "qw-note-card-insert": LocalJSX.QwNoteCardInsert & JSXBase.HTMLAttributes<HTMLQwNoteCardInsertElement>;
+            "qw-note-card-list": LocalJSX.QwNoteCardList & JSXBase.HTMLAttributes<HTMLQwNoteCardListElement>;
+            "qw-note-noteitem": LocalJSX.QwNoteNoteitem & JSXBase.HTMLAttributes<HTMLQwNoteNoteitemElement>;
+            "qw-note-wrapper": LocalJSX.QwNoteWrapper & JSXBase.HTMLAttributes<HTMLQwNoteWrapperElement>;
         }
     }
 }
